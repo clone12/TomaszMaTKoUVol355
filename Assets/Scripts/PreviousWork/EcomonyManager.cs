@@ -80,9 +80,18 @@ public class EcomonyManager : MonoBehaviour
         incomes.Add(new Income(cash)); //przychody raczej zawsze bed¹ minusowe
     }
 
-    void DoCalculations()
+
+    public void AddOutcome(int aVal)
     {
 
+            cash -= aVal;
+        incomes.Add(new Income(cash)); //w ten sposób mogê dodawaæ wydatki do konta gracza
+    }
+
+    void DoCalculations()
+    {
+        // tutaj powinny byæ obliczenia ktore za kazdym razem dodamy cos do listy "przychodów" odejmuj¹ to od naszego konta
+        // a nastepnie wyswietlana animacja reprezentujaca to
     }
     /*
     IEnumerator LateStart()
