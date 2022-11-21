@@ -5,17 +5,18 @@ using TKOU.SimAI;
 using TKOU.SimAI.Player;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EcomonyManager : MonoBehaviour
 {
     [Header("Zmienne")]
     private float cash; //nie potrzeby float skoro w klasie "Income" i  tak zmieniamy to na INT
-    public TMP_Text cashText;
+    public Text cashText;
     private Income income;
-    [SerializeField] private Income outcome; //[SerializaField] ju¿ jest private
+   // [SerializeField] private Income outcome; //[SerializaField] ju¿ jest private
     [SerializeField]
     private bool isCalc, canCalc; 
-    public int IntCash; // nie u¿ywane
+    public int IntCash; // nie u¿ywane Zmienna z duzej litery?
     private List<Income> incomes;
     private PlayerController plCtr;
 
@@ -23,19 +24,24 @@ public class EcomonyManager : MonoBehaviour
 
     private void Awake()
     {
+        IntCash = 200;
+        cashText.text = IntCash.ToString() + "$";
+
         income = (Income)GetComponent(typeof(Income)); // nie potrzebujemy braæ tego komponentu. z klasy Income usun¹³bym ":MonoBehiviour" i tworzy³ nowe obiekty przez konstruktor chcac dodac przychod "
         // przyda³oby siê równie¿ z list¹ zrobiæ "incomes = new List<Income>();
-        cashText.text = income.Cash.ToString(); // 
+        //cashText.text = income.Cash.ToString(); //Wartosc tekstu to same przychody?
         plCtr = FindObjectOfType<PlayerController>(); // W ten sposób raczej odniose siê do GameObjectu
+        
     }
 
     // Start is called before the first frame update 
+    /*
     IEnumerator Start()
     {
         Debug.Log("Start");
-        StartCoroutine(LateStart()); // W ten sposób siê "zapêtlamy" i co sekunde wykonuje siê debug.log
+        //StartCoroutine(LateStart()); // W ten sposób siê "zapêtlamy" i co sekunde wykonuje siê debug.log
         yield return 0;
-    }
+    }*/
 
     // Update is called once per frame
     public void Update()
@@ -78,12 +84,12 @@ public class EcomonyManager : MonoBehaviour
     {
 
     }
-
+    /*
     IEnumerator LateStart()
     {
         yield return new WaitForSeconds(1); //Po sekundzie ponownie odpalamy "Start". Nieskoñczona pêtla.
         StartCoroutine(Start());
-    }
+    }*/
 
     public void OnDisable()
     {
