@@ -8,6 +8,8 @@ namespace TKOU.SimAI.Levels.Buildings
     /// </summary>
     public class BuildingEntity : MonoBehaviour, IAmEntity
     {
+
+
         #region Properties
 
         public Building Building
@@ -38,6 +40,17 @@ namespace TKOU.SimAI.Levels.Buildings
             return buildingEntity;
         }
 
+        private void Update()
+        {
+            
+        }
+
+        public void EarnMoney()
+        {
+            //Tutaj nalezaloby zrobic IEnumerator ktory co 5s wywolywalby się w "playerController" i za pomoca "instantitate" 
+            // tworzyc na chwile tekjst "+wartosc" jako ze jest to skrypt "podpiety do kazdego budynku"
+        }
+
         public void Destroy()
         {
             Destroy(gameObject);
@@ -53,6 +66,7 @@ namespace TKOU.SimAI.Levels.Buildings
 
             transform.position = building.Tile.Position;
         }
+
 
         #endregion Private methods
     }

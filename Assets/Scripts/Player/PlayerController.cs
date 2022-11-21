@@ -173,6 +173,7 @@ namespace TKOU.SimAI.Player
             }
 
             buildHandler.BuildTarget = underCursorEntity;
+
         }
 
         private void SelectEntity(IAmEntity entity)
