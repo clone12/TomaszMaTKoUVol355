@@ -13,7 +13,7 @@ namespace TKOU.SimAI.Camera
         private CinemachineGroupComposer cameraGroupComposer;
 
         [SerializeField]
-        private UnityEngine.Camera camera;
+        private new UnityEngine.Camera camera;
         private Transform cameraTarget;
         private Transform cameraTransform;
 

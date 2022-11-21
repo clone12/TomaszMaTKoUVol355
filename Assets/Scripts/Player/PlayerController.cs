@@ -6,6 +6,7 @@ using TKOU.SimAI.Interfaces;
 using TKOU.SimAI.Levels;
 using TKOU.SimAI.Levels.Buildings;
 using TKOU.SimAI.Levels.Tiles;
+using TKOU.SimAI.Camera;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -109,7 +110,7 @@ namespace TKOU.SimAI.Player
         /// Initialize <see cref="PlayerController"/>.
         /// </summary>
         /// <param name="camera"></param>
-        public void Initialize(IAmCamera camera)
+        public void Initialize(GameCamera camera)
         {
             this.camera = camera;
 
@@ -122,7 +123,7 @@ namespace TKOU.SimAI.Player
 
         private void UpdateEntityUnderCursor()
         {
-            Ray ray = camera.Camera.ScreenPointToRay(Mouse.current.position.ReadValue());
+            Ray ray = camera.Camera.GetComponent<UnityEngine.Camera>().ScreenPointToRay(Mouse.current.position.ReadValue());
 
             RaycastHit[] hits = Physics.RaycastAll(ray);
 

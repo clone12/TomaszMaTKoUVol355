@@ -1,4 +1,6 @@
-﻿namespace TKOU.SimAI.Interfaces
+﻿using UnityEngine;
+
+namespace TKOU.SimAI.Interfaces
 {
     public interface IAmCamera : IAmMovable, IAmZoomable
     {
@@ -6,7 +8,7 @@
 
         public UnityEngine.Camera Camera
         {
-            get;
+            get; 
         }
 
         #endregion Properties
