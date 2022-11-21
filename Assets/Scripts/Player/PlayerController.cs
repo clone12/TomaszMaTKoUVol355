@@ -47,7 +47,7 @@ namespace TKOU.SimAI.Player
 
         private Dictionary<Type, Action<IAmEntity>> typeToSelectionHandlers;
 
-        private bool shouldUpdateEntityUnderCursor = false;
+        private bool shouldUpdateEntityUnderCursor = true;
 
         private BuildHandler buildHandler;
 
@@ -88,7 +88,7 @@ namespace TKOU.SimAI.Player
                 UpdateEntityUnderCursor();
                 UpdateHoveredEntity();
                 UpdateBuildHandler();
-                shouldUpdateEntityUnderCursor = false;
+                shouldUpdateEntityUnderCursor = true;
             }
         }
 
@@ -129,6 +129,7 @@ namespace TKOU.SimAI.Player
 
             underCursorEntity = null;
 
+            
             if (hits.Length == 0)
             {
                 return;
@@ -152,7 +153,7 @@ namespace TKOU.SimAI.Player
 
                 underCursorEntity = body.GetComponentInChildren<IAmEntity>();
 
-                if (underCursorEntity != null)
+                if (underCursorEntity == null) // BARDZO DOBRE
                 {
                     return;
                 }
@@ -183,6 +184,7 @@ namespace TKOU.SimAI.Player
 
             selectedEntity = entity;
 
+            
             if (selectedEntity == null)
             {
                 return;
