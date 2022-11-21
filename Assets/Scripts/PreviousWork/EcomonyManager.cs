@@ -57,6 +57,9 @@ public class EcomonyManager : MonoBehaviour
             cashText.color = new Color(1, 1, 1); // TUTAJ RÓWNIE¯! Ustawienie koloru tekstu na czarny
         }
         InvokeRepeating("DoCalculations", 1, 1); // Bezu¿teczne 
+
+        HowToWin();
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -80,6 +83,13 @@ public class EcomonyManager : MonoBehaviour
         incomes.Add(new Income(cash)); //przychody raczej zawsze bed¹ minusowe
     }
 
+    private void HowToWin()
+    {
+        if (cash > 500)
+        {
+            Debug.Log("you won");
+        }
+    }
 
     public void AddOutcome(int aVal)
     {
@@ -87,6 +97,8 @@ public class EcomonyManager : MonoBehaviour
             cash -= aVal;
         incomes.Add(new Income(cash)); //w ten sposób mogê dodawaæ wydatki do konta gracza
     }
+
+
 
     void DoCalculations()
     {

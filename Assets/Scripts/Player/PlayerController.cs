@@ -90,6 +90,8 @@ namespace TKOU.SimAI.Player
                 UpdateBuildHandler();
                 shouldUpdateEntityUnderCursor = true;
             }
+
+          
         }
 
         private void OnDestroy()
