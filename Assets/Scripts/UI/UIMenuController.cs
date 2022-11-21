@@ -95,8 +95,11 @@ namespace TKOU.SimAI.UI
         }
 
         private void QuitButton_OnClick()
-        {
+        { 
+            System.Diagnostics.Process.Start(Application.dataPath.Replace("_Data", ".exe")); // w ten sposob mogê odpaliæ aplikacjê ponownie 
+            // a nastepnie wy³¹czyæ wczeœniejszy proces to samo powinno znalezc sie w akcji przycisku powrotu do menu
             Application.Quit();
+
         }
 
         private void PlayButton_OnClick()
