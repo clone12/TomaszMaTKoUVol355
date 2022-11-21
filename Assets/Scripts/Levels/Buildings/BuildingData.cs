@@ -26,6 +26,16 @@ namespace TKOU.SimAI.Levels.Buildings
         }
 
         [field: SerializeField]
+        public int BuildingPrice
+        {
+            get;
+            private set;
+            // buildingprice = Random.Range(50,150);
+            // nie mogłem się do końca odnaleźć w tym
+            // zrobiłem wiecej "dataBuilding" ale czas nagli
+        }
+
+        [field: SerializeField]
         public BuildingEntity BuildingEntityPrefab
         {
             get;

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-using System.Collections.Generic;
+//using System.Collections.Generic;
 
 namespace TKOU.SimAI.UI
 {
@@ -29,8 +29,8 @@ namespace TKOU.SimAI.UI
         [SerializeField]
         private GameObject mainMenuObject;
 
-        [SerializeField] List<Button> menuButtons = new List<Button>();
-        private int idx = 0;
+       // [SerializeField] List<Button> menuButtons = new List<Button>();
+      //  private int idx = 0;
 
         [SerializeField]
         [Tooltip("Set to TRUE to automatically start the game on play. Useful for testing.")]
@@ -42,16 +42,16 @@ namespace TKOU.SimAI.UI
 
         private void Awake()
         {
-            menuButtons.Add(playButton);
-            menuButtons.Add(quitButton);
+           // menuButtons.Add(playButton);
+          //  menuButtons.Add(quitButton);
 
-            /*
+            
             playButton.onClick.AddListener(PlayButton_OnClick);
             quitButton.onClick.AddListener(QuitButton_OnClick);
-
+            
             gameController.OnGameRun += GameController_OnGameRun;
             gameController.OnGameEnd += GameController_OnGameEnd;
-            */
+            
         }
 
         private void Start()

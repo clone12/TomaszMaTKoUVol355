@@ -23,6 +23,8 @@ namespace TKOU.SimAI
 
         [SerializeField]
         private TextMeshProUGUI nameText;
+        [SerializeField]
+        private TextMeshProUGUI priceText;
 
         [SerializeField]
         private Image iconImage;
