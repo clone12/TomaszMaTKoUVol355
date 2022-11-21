@@ -42,7 +42,7 @@ namespace TKOU.SimAI.Player
 
         private bool isContextPressed = false;
 
-        private const float moveScale = 0.04f;
+        private const float moveScale = 0.5f;
         private const float zoomScale = 5f;
 
         private Dictionary<Type, Action<IAmEntity>> typeToSelectionHandlers;
